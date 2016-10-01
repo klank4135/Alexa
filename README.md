@@ -1,4 +1,4 @@
-# Projecto Alexa 
+# Projecto Alexa
 Proyecto de activacion de actuadores electronicos por comandos de voz
 
 ## Antes de empezar
@@ -8,11 +8,11 @@ pero por favor ten en cuenta que el proyecto estara mantenido por mas de una per
 por lo que la documentacion en el codigo es indispensable.
 
 ### Pre- requisitos
-*Apache
-*PHP
-*MYSQL
-*PYTHON v2.7 (Disponible por defecto en todos los rasberry pi con raspbian)
-*RASPBERRYPI v3 (Cualquier version esta bien en realidad pero las pruebas se realizaron en esta version)
+* Apache
+* PHP
+* MYSQL
+* PYTHON v2.7 (Disponible por defecto en todos los rasberry pi con raspbian)
+* RASPBERRYPI v3 (Cualquier version esta bien en realidad pero las pruebas se realizaron en esta version)
 
 
 ```
