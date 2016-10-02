@@ -1,6 +1,8 @@
 # Projecto Alexa
 Proyecto de activacion de actuadores electronicos por comandos de voz
 
+# Version 1.0
+
 ## Antes de empezar
 El proyecto busca solucionar ciertos problemas que enfrentan las personas con
 discapacidad motora, por favor sientete libre de cambiar cualquier parte del codigo
