@@ -2,8 +2,8 @@
 $valor = $_POST["voz"];
 if($valor=="alexa encender luz salón" || $valor=="alexa encender salón" || $valor=="alexa luz salón" || $valor=="alexa encender luz" || $valor=="alexa luz")
 {
-
-  exec('sudo ./encender_salon.sh');
+  exec('sudo bash ../web/scripts/relay/activar_17.sh');
+  exec('sudo bash ../web/scripts/relay/encender_salon.sh');
   exec('sudo espeak -ves+f6 "Luz del salon encendida"');
 
 }
