@@ -22,13 +22,16 @@
 <h1 align="center" style="color:#00ACC1">Proyecto Alexa<h1>
 <h2 align="center" style="color:#00ACC1"> Alexander Morales Villatoro</h2>
 <!-- Se utilizará el método POST, para el envió de datos a una página PHP, en este caso seguirdad.php -->
-  <div class="login-card">
-    <h1>Inicio de Sesion</h1><br>
-  <form method="POST" action="seguridad.php">
-    <input type="text" name="user" placeholder="Usuario">
-    <input type="password" name="pass" placeholder="Contraseña">
-    <input type="submit" class="btn btn-success" value="Iniciar">
-  </form>
+
+<div class="container">  
+  <div class="wrapper">
+    <h3 class="form-signin-heading">Iniciar sesion</h3>
+    <form method="POST" action="seguridad.php">
+      <input type="text" class="form-control" name="user" placeholder="Usuario">
+      <input type="password" class="form-control "name="pass" placeholder="Contraseña">
+      <input type="submit" class="btn btn-lg btn-primary btn-block" value="Iniciar">
+    </form>
+  </div>
 </div>
 </body>
 </html>
