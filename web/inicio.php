@@ -53,7 +53,6 @@
     /* En caso de que la coockie esté registrada la luz se encenderá y nos mostrará una imagen de una bombilla encendida*/
         if ($coockie == 'SalonEncendido') {
     //Aquí llamamos al Script que contiene la orden de encendido
-	    exec("sudo bash scripts/relay/activar_17.sh");
             exec("sudo bash scripts/relay/encender_salon.sh");
             echo "
             <br><br>
@@ -70,9 +69,8 @@
         // En caso de que la coockie se haya borrado, ejecutar apagar, y mostrar el mensaje de Luz apagada.
         if ( $coockie == "" ) { 
         //LLamada al Script para apagar luz.
-	    exec("sudo bash scripts/relay/desactivar_17.sh");
             exec("sudo bash scripts/relay/apagar_salon.sh");
-            echo "
+	    echo "
                 <br><br>
                 <div class='center-block' align='center'>
                 <h1 align='center' style='color:blue'>Luz Salon Apagada</h1>
@@ -104,7 +102,6 @@
                 }
         $coockieVentilador = isset($_COOKIE['encenderventilador']);
         if ($coockieVentilador == 'VentiladorEncendido') {
-            exec("sudo bash scripts/relay/activar_27.sh");
             exec("sudo bash scripts/relay/encender_ventilador.sh");
 	    echo "
             <br><br>
@@ -118,7 +115,6 @@
             header( "refresh:0;" );
             }
         if ( $coockieVentilador == "" ) {
-	    exec("sudo bash scripts/relay/desactivar_27.sh");
             exec("sudo bash scripts/relay/apagar_ventilador.sh");
             echo "
                 <br><br>

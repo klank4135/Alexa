@@ -1,2 +1,2 @@
 #!/bin/bash
-echo 1 > /sys/class/gpio/gpio27/value
+echo 27 > /sys/class/gpio/unexport

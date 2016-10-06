@@ -6,9 +6,9 @@
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../web/css/bootstrap.min.css" rel="stylesheet" media="screen">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.4.0/annyang.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  
+  <script src="js/annyang.min.js"></script>
+  <script src="js/jquery-1.10.1.min.js"></script>
+ 
 </head>
 <body>
   <script>
@@ -20,7 +20,38 @@
       type: "POST",
       url: "procesa.php",
       data: "voz="+voz,
-    });
+    }).fail( function( jqXHR, textStatus, errorThrown ) {
+
+  	if (jqXHR.status === 0) {
+
+    	alert('Not connect: Verify Network.');
+
+  	} else if (jqXHR.status == 404) {
+
+    	alert('Requested page not found [404]');
+
+  	} else if (jqXHR.status == 500) {
+
+    	alert('Internal Server Error [500].');
+
+  	} else if (textStatus === 'parsererror') {
+
+    	alert('Requested JSON parse failed.');
+
+  	} else if (textStatus === 'timeout') {
+
+    	alert('Time out error.');
+
+  	} else if (textStatus === 'abort') {
+
+    	alert('Ajax request aborted.');
+
+  	} else {
+
+    	alert('Uncaught Error: ' + jqXHR.responseText);
+
+  	}
+   });
   }
   //Reconocimiento de voz
   if (annyang) {

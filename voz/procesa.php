@@ -1,25 +1,36 @@
 <?php
 $valor = $_POST["voz"];
-if($valor=="Alexa Encender luz salón" || $valor==Alexa Encender salón" || $valor=="alexa luz salón" || $valor=="alexa encender luz" || $valor=="alexa luz")
-{
-  exec('sudo bash ../web/scripts/relay/activar_17.sh');
+if($valor=="Alexa enciende la luz de la sala"){
   exec('sudo bash ../web/scripts/relay/encender_salon.sh');
-  exec('sudo espeak -ves+f6 "Luz del salon encendida"');
-}
-if($valor=="Alexa Apagar luz salon" || $valor=="Alexa Apagar luz" || $valor=="alexa apagar salon" || $valor=="alexa desactivar")
-{
+  exec('sudo espeak -ves+f5 -s210 "Luz de la sala encendida"');
+
+} else if($valor=="Alexa apaga la luz de la sala"){
   exec('sudo bash ../web/scripts/relay/apagar_salon.sh');
-  exec('sudo bash ../web/scripts/relay/desactivar_17.sh');
-  exec('sudo espeak -ves+f6 "Luz del salon apagada"');
-}
-if($valor=='alexa encender ventilador' || $valor=='alexa ventilador' )
-{
+  exec('sudo espeak -ves+f5 -s210 "Luz de la sala apagada"');
+
+} else if($valor=="Alexa enciende el ventilador"){
   exec('sudo ./encender_ventilador.sh');
-  exec('sudo espeak -ves+f6 "Ventilador encendido"');
-}
-if($valor=='alexa apagar ventilador' || $valor=='alexa apagar el ventilador' )
-{
+  exec('sudo espeak -ves+f5 -s210 "Ventilador encendido"');
+
+} else if($valor=="Alexa Apaga el ventilador"){
   exec('sudo ./apagar_ventilador.sh');
-  exec('sudo espeak -ves+f6 "Ventilador apagado"');
+  exec('sudo espeak -ves+f5 -s210 "Ventilador apagado"');
+
+} else if ($valor=="Alexa mueve silla hacia adelante"){
+  exec('sudo espeak -ves+f5 -s210 "Silla avanzando"');
+
+} else if ($valor=="Alexa mueve silla hacia atras"){
+  exec('sudo espeak -ves+f5 -s210 "Precaucion silla retrocediendo"');
+
+} else if ($valor=="Alexa gira silla a la izquierda"){
+  exec('sudo espeak -ves+f5 -s210 "Girando la silla hacia la izquierda"');
+
+} else if ($valor=="Alexa gira silla a la derecha"){
+  exec('sudo espeak -ves+f5 -s210 "Girando la silla hacia la derecha"');
+
+}
+else{
+  exec('sudo espeak -ves+f5 -s210 "Lo siento, no entendi tu comando"');
+
 }
 ?>
