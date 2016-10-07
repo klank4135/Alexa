@@ -7,10 +7,14 @@ GPIO.setmode(GPIO.BCM)
 
 #Set relay pins as output
 GPIO.setup(17, GPIO.OUT)
+GPIO.setup(27, GPIO.OUT)
 
-
-while ( True ):
-	GPIO.output(17, GPIO.HIGH)
-	sleep( 5 )
-	GPIO.output(17, GPIO.LOW)
-	sleep( 5 )
+GPIO.output(17, GPIO.HIGH)
+sleep( 1 )
+GPIO.output(17, GPIO.LOW)
+sleep( 1 )
+GPIO.output(27, GPIO.HIGH)
+sleep( 1 )
+GPIO.output(27, GPIO.LOW)
+sleep( 1 )
+GPIO.cleanup()
