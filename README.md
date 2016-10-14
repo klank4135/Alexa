@@ -1,7 +1,7 @@
 # Projecto Alexa
 Proyecto de activacion de actuadores electronicos por comandos de voz
 
-# Version 1.1
+# Version 1.2
 
 ## Antes de empezar
 El proyecto busca solucionar ciertos problemas que enfrentan las personas con
