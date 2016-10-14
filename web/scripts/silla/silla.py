@@ -1,9 +1,13 @@
+#!/usr/bin/python
+__author__ = 'klank4135'
+import sys
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 left_in1_pin = 22 
 left_in2_pin = 23
 right_in1_pin = 18
 right_in2_pin = 24
+
 class Motor(object):
         def __init__(self, in1_pin, in2_pin):
                 self.in1_pin = in1_pin
@@ -40,34 +44,40 @@ try:
        
         direction = None
        
-        while True:    
-                cmd = raw_input("Command, f/r/o/p/s 0..9, E.g. f5 :")
-               
+        while (sys.argv[1] !='n'):    
+                #cmd = raw_input("Command, f/r/o/p/s 0..9, E.g. f5 :")
+		cmd = str(sys.argv[1])
                 # if enter was pressed with no value, just stick with the current value
                 if len(cmd) > 0:
                         direction = cmd[0]
                 if direction == "f":
                         left_motor.clockwise()
                         right_motor.clockwise()
+			break
                 elif direction == "r":
                         left_motor.counter_clockwise()
                         right_motor.counter_clockwise()
+			break
                 elif direction == "o": # opposite1
                         left_motor.counter_clockwise()
                         right_motor.clockwise()
+			break
                 elif direction == "p":
                         left_motor.clockwise()
-                        right_motor.counter_clockwise()        
+                        right_motor.counter_clockwise()
+			break        
                 else:
                         left_motor.stop()
                         right_motor.stop()
+			break
                
                 # only need to adjust speed if we want to      
                 if len(cmd) > 1:
                         speed = int(cmd[1]) * 11
                         set("duty", str(speed))
                
-except KeyboardInterrupt:
+except ValueError:
+    	print "Invalid value, stopping motors"
         left_motor.stop()
         right_motor.stop()
         print "\nstopped"
