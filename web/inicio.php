@@ -33,7 +33,6 @@
                 <ul class="nav nav-tabs">
                   <li class="active"><a href="#tab1" datatoggle="tab">Salon</a></li>
                   <li ><a href="#tab2" data-toggle="tab">Ventilador</a></li>
-                  <li><a href="#tab3" data-toggle="tab">Silla</a></li>
                 </ul>
             <div class="tab-content">
             <!-- Primera opción del menú -->
@@ -135,10 +134,6 @@
 </form>
 </div>
 
-<div class="tab-pane" id="tab3">
-
 </div>
-    </div>
-   </div>
   </body>
 <html>
